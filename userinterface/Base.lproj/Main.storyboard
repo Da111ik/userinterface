@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="userinterface" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJR-eX-MrP">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="left" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TWk-4y-Ii7">
+                                        <rect key="frame" x="70" y="106" width="274" height="85"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="TMz-84-WHL">
+                                                <rect key="frame" x="0.0" y="6.5" width="78.5" height="72"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1h-Pr-BFw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="78.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvg-b7-8F8">
+                                                        <rect key="frame" x="0.0" y="51.5" width="78.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="78.5" id="NDM-xd-Pbn"/>
+                                                </constraints>
+                                                <viewLayoutGuide key="safeArea" id="Zxx-V3-2bk"/>
+                                            </stackView>
+                                            <stackView verifyAmbiguity="ignoreSizes" opaque="NO" contentMode="center" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="oNG-KY-jer">
+                                                <rect key="frame" x="83.5" y="0.0" width="190.5" height="85"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your login" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iRU-kS-OaK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="190.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ORa-9q-hNn">
+                                                        <rect key="frame" x="0.0" y="51" width="190.5" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="227" id="cg7-6L-dpy"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nE-Gy-llh">
+                                        <rect key="frame" x="172" y="212" width="70" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="6TJ-Gq-ofB"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <size key="titleShadowOffset" width="8" height="0.0"/>
+                                        <state key="normal" title="sing in">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="singIn_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jRa-CO-Ckl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="TWk-4y-Ii7" firstAttribute="top" secondItem="Prh-od-o2x" secondAttribute="top" constant="106" id="2RN-bY-74u"/>
+                                    <constraint firstItem="Prh-od-o2x" firstAttribute="trailing" secondItem="TWk-4y-Ii7" secondAttribute="trailing" constant="70" id="6RW-wm-6Bp"/>
+                                    <constraint firstAttribute="trailing" secondItem="TWk-4y-Ii7" secondAttribute="trailing" constant="70" id="6ci-T9-XCo"/>
+                                    <constraint firstAttribute="bottom" secondItem="9nE-Gy-llh" secondAttribute="bottom" constant="572" id="Ob7-8N-Tk1"/>
+                                    <constraint firstItem="9nE-Gy-llh" firstAttribute="top" secondItem="TWk-4y-Ii7" secondAttribute="bottom" constant="21" id="kfT-bB-WfR"/>
+                                    <constraint firstItem="TWk-4y-Ii7" firstAttribute="centerX" secondItem="rJR-eX-MrP" secondAttribute="centerX" id="zBZ-6I-hBr"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="5nY-lS-fLx"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Prh-od-o2x"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9nE-Gy-llh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1qm-R4-U6t"/>
+                            <constraint firstItem="rJR-eX-MrP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8lK-W0-p5z"/>
+                            <constraint firstItem="rJR-eX-MrP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Nu0-NE-YQF"/>
+                            <constraint firstItem="rJR-eX-MrP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bov-Sm-xqM"/>
+                            <constraint firstItem="rJR-eX-MrP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zz2-gh-bw7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginText" destination="iRU-kS-OaK" id="552-0b-5WZ"/>
+                        <outlet property="passwordText" destination="ORa-9q-hNn" id="aGi-YL-bCS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-88" y="-664"/>
+        </scene>
+    </scenes>
+</document>
