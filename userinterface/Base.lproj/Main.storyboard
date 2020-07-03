@@ -108,6 +108,7 @@
                     <connections>
                         <outlet property="loginText" destination="iRU-kS-OaK" id="552-0b-5WZ"/>
                         <outlet property="passwordText" destination="ORa-9q-hNn" id="aGi-YL-bCS"/>
+                        <outlet property="scrollView" destination="rJR-eX-MrP" id="qjK-qw-0Nb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
