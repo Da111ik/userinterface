@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginController.swift
 //  userinterface
 //
 //  Created by Дарья Шимко on 01.07.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginText: UITextField!
@@ -68,8 +68,33 @@ class ViewController: UIViewController {
     
     @IBAction func singIn(_sender: UIButton) {
         
+        if loginText.text! == "admin" && passwordText.text! == "12345" {
+            
+            guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "tabBar") as? UITabBarController else { return }
+        
+            vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            present(vc, animated: true, completion: nil)
+                 
+            return
+            
+        } else {
+    
+            showAlertLogin("Error", message: "Your login or password is not correct")
+            
+            
+        }
         
     }
     
+    func showAlertLogin(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil)
+        
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }
 
