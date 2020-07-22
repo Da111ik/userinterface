@@ -78,8 +78,8 @@ class GroupTableViewController: UITableViewController {
         
         if !existGroup {
             let newGroup = Group(newStringGroup, UIImage())
-            arrayGroups.append(newGroup)
-            tableView.reloadData()
+            arrayGroups.insert(newGroup, at: 0)
+            tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .right)
         }
     }
     

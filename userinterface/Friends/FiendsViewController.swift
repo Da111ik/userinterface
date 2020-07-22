@@ -22,33 +22,64 @@ class FriendsTableViewController: UITableViewController {
                         User("Петр", UIImage(named: "friend_8")!),
                         User("Анастасия", UIImage(named: "friend_9")!)]
     
+    
+    var section: [Character: [User]] = [:]
+    var sectionTitles = [Character]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 60
+        
+        for user in arrayFriends {
+            if section[user.name.first!] != nil {
+                section[user.name.first!]?.append(user)
+            }
+            else {
+                section[user.name.first!] = [user]
+            }
+        }
+       
+        sectionTitles = Array(section.keys)
+        sectionTitles.sort()
+        
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Arial", size: 20)
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sectionTitles.map{ String($0) }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return String(sectionTitles[section])
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return sectionTitles.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayFriends.count
+        
+        return self.section[sectionTitles[section]]?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as? FriendsTableCellView else { fatalError() }
-       
+        guard let user = section[sectionTitles[indexPath.section]]?[indexPath.row] else { fatalError() }
 
-        cell.nameFriend.text = arrayFriends[indexPath.row].name
-        cell.imageFriend.image = arrayFriends[indexPath.row].avaterImage
+        cell.nameFriend.text = user.name
+        cell.avatarImage.image = user.avaterImage
+        cell.avatarView.configure()
         
         return cell
         
     }
     
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let indexPath = tableView.indexPathForSelectedRow
         let transfer: FriendsCollectionViewController = segue.destination as! FriendsCollectionViewController

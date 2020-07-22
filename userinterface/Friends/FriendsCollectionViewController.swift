@@ -8,30 +8,35 @@
 
 import UIKit
 
-class FriendsCollectionViewController: UICollectionViewController {
+class FriendsCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-
     var user: User?
-        
+    
+    @IBOutlet weak var collectionView: UICollectionView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView?.dataSource = self
+        collectionView?.delegate = self
+            
     }
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         1
     }
      
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "profilFriendCell", for: indexPath) as! FriendsCollectionCellView
         
-        cell.avatarFiend.image = user?.avaterImage
-        cell.nameLabel.text = user?.name
-        
+        cell.avatarFiend?.image = user?.avaterImage
+        cell.nameLabel?.text = user?.name
+ 
         return cell
         
     }
     
+
 }
 
 extension FriendsCollectionViewController: UICollectionViewDelegateFlowLayout {
