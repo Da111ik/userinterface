@@ -10,6 +10,8 @@ import UIKit
 
 class GroupTableViewController: UITableViewController {
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var arrayGroups: [Group] = [Group("Наш art", UIImage(named: "group_0")),
                        Group("Кисти, краски и бумага (ККБ)", UIImage(named: "group_1")),
                        Group("Лето-весна", UIImage(named: "group_2")),
@@ -20,9 +22,16 @@ class GroupTableViewController: UITableViewController {
                        Group("Хакапрог", UIImage(named: "group_7")),
                        Group("Карпаты вам рады", UIImage(named: "group_8"))]
 
-    override func viewDidLoad() {
+
+    private var filterGoups = [Group]()
+
+    
+    override func viewDidLoad(	) {
         super.viewDidLoad()
         tableView.rowHeight = 60
+        
+        searchBar.delegate = self
+        filterGoups = arrayGroups
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,7 +39,9 @@ class GroupTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayGroups.count
+        
+        
+        return filterGoups.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,8 +50,8 @@ class GroupTableViewController: UITableViewController {
             fatalError()
         }
         
-        cell.nameGroup.text = arrayGroups[indexPath.row].name
-        cell.imageGroup.image = arrayGroups[indexPath.row].avatarImage
+        cell.nameGroup.text = filterGoups[indexPath.row].name
+        cell.imageGroup.image = filterGoups[indexPath.row].avatarImage
         
         return cell
     }
@@ -98,4 +109,19 @@ class GroupTableViewController: UITableViewController {
         
     }
 
+}
+
+
+extension GroupTableViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.isEmpty {
+            filterGoups = arrayGroups
+        }
+        else {
+            filterGoups = arrayGroups.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+        }
+        tableView.reloadData()
+    }
 }
