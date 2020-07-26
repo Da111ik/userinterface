@@ -17,6 +17,4 @@ class FriendsTableCellView: UITableViewCell {
     @IBOutlet weak var nameFriend: UILabel!
     
     
-    
-    
 }

@@ -11,7 +11,7 @@ import UIKit
 class FriendsTableViewController: UITableViewController {
     
     
-    let arrayFriends = [User("Александр", UIImage(named: "friend_0")!),
+    private let arrayFriends = [User("Александр", UIImage(named: "friend_0")!),
                         User("Василий", UIImage(named: "friend_1")!),
                         User("Диана", UIImage(named: "friend_2")!),
                         User("Данил", UIImage(named: "friend_3")!),
@@ -23,42 +23,96 @@ class FriendsTableViewController: UITableViewController {
                         User("Анастасия", UIImage(named: "friend_9")!)]
     
     
-    var section: [Character: [User]] = [:]
-    var sectionTitles = [Character]()
+    private var section: [Character: [User]] = [:]
+    private var sectionTitles = [Character]()
+    
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var filterResult = [User]()
+    private var isEmptySearch: Bool {
+        guard let text = searchController.searchBar.text else { return true }
+        return text.isEmpty
+    }
+    
+    private var isFiltering: Bool {
+        return !isEmptySearch && searchController.isActive
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 60
+               
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
         
-        for user in arrayFriends {
-            if section[user.name.first!] != nil {
-                section[user.name.first!]?.append(user)
-            }
-            else {
-                section[user.name.first!] = [user]
+        navigationItem.searchController = searchController
+        definesPresentationContext = true // empties the searchController in other scene
+        
+    }
+       
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        section.removeAll()
+        
+        if isFiltering {
+             
+            for user in filterResult {
+                if section[user.name.first!] != nil {
+                    section[user.name.first!]?.append(user)
+                }
+                else {
+                    section[user.name.first!] = [user]
+                }
+            
             }
         }
-       
+        else {
+            for user in arrayFriends {
+               if section[user.name.first!] != nil {
+                   section[user.name.first!]?.append(user)
+               }
+               else {
+                   section[user.name.first!] = [user]
+               }
+           }
+        }
         sectionTitles = Array(section.keys)
         sectionTitles.sort()
-        
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.font = UIFont(name: "Arial", size: 20)
-    }
-    
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return sectionTitles.map{ String($0) }
+
+        return sectionTitles.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return String(sectionTitles[section])
+          return String(sectionTitles[section])
+      }
+      
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+      
+          let vw = UIView()
+          vw.backgroundColor = UIColor.systemPurple.withAlphaComponent(0.5)
+          
+          let titleVW = UILabel()
+          titleVW.text = String(sectionTitles[section])
+          titleVW.font = UIFont(name: "Arial", size: 20)
+          
+          titleVW.translatesAutoresizingMaskIntoConstraints = false
+
+          vw.addSubview(titleVW)
+          
+          let constraintsArray = [
+              titleVW.leadingAnchor.constraint(equalTo: vw.leadingAnchor, constant: 25),
+              titleVW.trailingAnchor.constraint(greaterThanOrEqualTo: vw.trailingAnchor, constant: 100),
+              titleVW.centerYAnchor.constraint(equalTo: vw.centerYAnchor)
+          ]
+      
+          vw.addConstraints(constraintsArray)
+          
+
+          return vw
     }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionTitles.count
+
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sectionTitles.map{ String($0) }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,9 +138,30 @@ class FriendsTableViewController: UITableViewController {
         let indexPath = tableView.indexPathForSelectedRow
         let transfer: FriendsCollectionViewController = segue.destination as! FriendsCollectionViewController
         
-        transfer.user = arrayFriends[indexPath!.row]
-
+        transfer.user = section[sectionTitles[indexPath!.section]]![indexPath!.row]
+      
     }
 }
 
-
+extension FriendsTableViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    
+    private func filterContentForSearchText(_ searchText: String) {
+     
+        if searchText.isEmpty {
+            filterResult = arrayFriends
+        }
+        else {
+            filterResult = arrayFriends.filter({ (User) -> Bool in
+                return User.name.lowercased().contains(searchText.lowercased())
+            })
+        }
+        
+        tableView.reloadData()
+    }
+        
+}
