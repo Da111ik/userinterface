@@ -609,9 +609,34 @@
                                             <action selector="singIn_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jRa-CO-Ckl"/>
                                         </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="S4o-IW-ALW">
+                                        <rect key="frame" x="193" y="329" width="28.5" height="42"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctw-eW-dqk">
+                                                <rect key="frame" x="0.0" y="0.0" width="9.5" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qe-eY-ppL">
+                                                <rect key="frame" x="9.5" y="0.0" width="9.5" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ga-YH-jwa">
+                                                <rect key="frame" x="19" y="0.0" width="9.5" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="9nE-Gy-llh" secondAttribute="bottom" constant="560" id="KOh-qo-qsX"/>
+                                    <constraint firstItem="S4o-IW-ALW" firstAttribute="top" secondItem="9nE-Gy-llh" secondAttribute="bottom" constant="37" id="OnF-S0-2Le"/>
+                                    <constraint firstItem="S4o-IW-ALW" firstAttribute="centerX" secondItem="rJR-eX-MrP" secondAttribute="centerX" id="PfE-1N-cbI"/>
                                     <constraint firstItem="9nE-Gy-llh" firstAttribute="top" secondItem="sja-YU-B53" secondAttribute="bottom" constant="47" id="dsm-uQ-41M"/>
                                     <constraint firstItem="sja-YU-B53" firstAttribute="top" secondItem="rJR-eX-MrP" secondAttribute="top" constant="125" id="hTh-mJ-VhI"/>
                                     <constraint firstAttribute="trailing" secondItem="sja-YU-B53" secondAttribute="trailing" constant="92" id="oAR-OM-BBR"/>
@@ -633,14 +658,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="JvP-J1-S3T"/>
                     <connections>
+                        <outlet property="firstPoint" destination="ctw-eW-dqk" id="Xwl-Rf-tx7"/>
                         <outlet property="loginText" destination="iRU-kS-OaK" id="552-0b-5WZ"/>
                         <outlet property="passwordText" destination="ORa-9q-hNn" id="aGi-YL-bCS"/>
                         <outlet property="scrollView" destination="rJR-eX-MrP" id="9lM-tH-Z5C"/>
+                        <outlet property="secondPoint" destination="1qe-eY-ppL" id="psD-jS-YMq"/>
+                        <outlet property="thirdPoint" destination="7ga-YH-jwa" id="iHy-sn-a5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2290" y="-1388"/>
+            <point key="canvasLocation" x="-2291.304347826087" y="-1388.1696428571429"/>
         </scene>
     </scenes>
     <resources>
