@@ -57,25 +57,24 @@ import UIKit
         self.heartButton.addTarget(self, action: #selector(imageTapped(_:)), for: .touchUpInside)
 
     }
-
     
     @objc func imageTapped(_ sender: UIButton) {
         
+  
         if sender.currentImage == UIImage(systemName: "heart") {
             self.heartButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-
             self.countLike += 1
-            self.countLikeLabel.text = String(self.countLike)
         }
         else {
 
             self.heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
-
             self.countLike -= 1
-            self.countLikeLabel.text = String(self.countLike)
         }
                
 
+        UIView.transition(with: self.countLikeLabel, duration: 0.7, options: .transitionCrossDissolve, animations: {
+            self.countLikeLabel.text = String(self.countLike)
+        })
     }
 
     override func layoutSubviews() {

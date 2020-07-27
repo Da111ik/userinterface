@@ -14,6 +14,9 @@ class LoginController: UIViewController {
     @IBOutlet weak var loginText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
+    @IBOutlet weak var firstPoint: UILabel!
+    @IBOutlet weak var secondPoint: UILabel!
+    @IBOutlet weak var thirdPoint: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
@@ -29,8 +32,37 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.firstPoint.alpha   = 0.1
+        self.secondPoint.alpha  = 0.1
+        self.thirdPoint.alpha   = 0.1
+        
+        
+        UIView.animate(withDuration: 1, delay: 0.0, options: .repeat, animations: {
+            self.firstPoint.alpha   = 1
+            self.secondPoint.alpha  = 0.1
+            self.thirdPoint.alpha   = 0.1
+
+        }, completion: { (result) in })
+
+        UIView.animate(withDuration: 1, delay: 0.4, options: .repeat, animations: {
+
+            self.firstPoint.alpha   = 0.1
+            self.secondPoint.alpha  = 1
+            self.thirdPoint.alpha   = 0.1
+
+        }, completion: { (result) in })
+
+        UIView.animate(withDuration: 1, delay: 0.6, options: .repeat, animations: {
+
+            self.firstPoint.alpha   = 0.1
+            self.secondPoint.alpha  = 0.1
+            self.thirdPoint.alpha   = 1
+
+        }, completion: { (result) in })
+
     }
+    
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
