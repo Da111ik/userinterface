@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C133166924CDFDFB0095B2E0 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133166824CDFDFB0095B2E0 /* NewsViewController.swift */; };
 		C133166B24CDFF3D0095B2E0 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133166A24CDFF3D0095B2E0 /* NewsTableViewCell.swift */; };
+		C1340F4B24D2055D008438BE /* ShowImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1340F4A24D2055D008438BE /* ShowImagesViewController.swift */; };
 		C1856FE524BBA30E00FEB27E /* FriendsTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1856FE424BBA30E00FEB27E /* FriendsTableCellView.swift */; };
 		C1856FE824BBA45900FEB27E /* GroupTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1856FE724BBA45900FEB27E /* GroupTableCellView.swift */; };
 		C1856FEA24BBA4B900FEB27E /* GroupSearchTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1856FE924BBA4B900FEB27E /* GroupSearchTableCellView.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		C133166824CDFDFB0095B2E0 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		C133166A24CDFF3D0095B2E0 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		C1340F4A24D2055D008438BE /* ShowImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImagesViewController.swift; sourceTree = "<group>"; };
 		C1856FE424BBA30E00FEB27E /* FriendsTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableCellView.swift; sourceTree = "<group>"; };
 		C1856FE724BBA45900FEB27E /* GroupTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableCellView.swift; sourceTree = "<group>"; };
 		C1856FE924BBA4B900FEB27E /* GroupSearchTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSearchTableCellView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				C1E8A1CE24C6272600651234 /* PageLike.swift */,
 				C1E8A1C624C0DBDA00651234 /* FriendsCollectionCellView.swift */,
 				C1E8186A24B21AFB008DFB08 /* FriendsCollectionViewController.swift */,
+				C1340F4A24D2055D008438BE /* ShowImagesViewController.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				C1E8A1CD24C6186D00651234 /* AvatarView.swift in Sources */,
 				C197B1EF24AD08E9005D14F5 /* AppDelegate.swift in Sources */,
 				C197B1F124AD08E9005D14F5 /* SceneDelegate.swift in Sources */,
+				C1340F4B24D2055D008438BE /* ShowImagesViewController.swift in Sources */,
 				C1856FEA24BBA4B900FEB27E /* GroupSearchTableCellView.swift in Sources */,
 				C133166B24CDFF3D0095B2E0 /* NewsTableViewCell.swift in Sources */,
 				C1E8A1C324C0D5A900651234 /* User.swift in Sources */,

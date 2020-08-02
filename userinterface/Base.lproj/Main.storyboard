@@ -99,6 +99,21 @@
             </objects>
             <point key="canvasLocation" x="-2610" y="56"/>
         </scene>
+        <!--Show Images View Controller-->
+        <scene sceneID="WiC-N6-ABZ">
+            <objects>
+                <viewController storyboardIdentifier="showImages" id="ODW-mj-oK7" customClass="ShowImagesViewController" customModule="userinterface" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zTg-1r-eUL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <viewLayoutGuide key="safeArea" id="bhX-td-gzc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lmx-5Z-ljs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3948" y="54"/>
+        </scene>
         <!--Friends Collection View Controller-->
         <scene sceneID="g9J-ZO-D2D">
             <objects>

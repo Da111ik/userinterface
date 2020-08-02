@@ -12,6 +12,7 @@ class FriendsCollectionViewController: UIViewController, UICollectionViewDataSou
     
     var user: User?
     
+    
     @IBOutlet weak var collectionView: UICollectionView?
     
     override func viewDidLoad() {
@@ -35,8 +36,20 @@ class FriendsCollectionViewController: UIViewController, UICollectionViewDataSou
         return cell
         
     }
-    
-
+        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+        guard let showImageVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "showImages") as? ShowImagesViewController else { return }
+        
+        var arrayImage = [UIImage]()
+        arrayImage.append(user?.avaterImage ?? UIImage())
+        arrayImage.append(UIImage(named: "group_1")!)
+        arrayImage.append(UIImage(named: "group_2")!)
+        
+        showImageVC.arrayImage = arrayImage
+        
+        present(showImageVC, animated: true, completion: nil)
+    }
 }
 
 extension FriendsCollectionViewController: UICollectionViewDelegateFlowLayout {

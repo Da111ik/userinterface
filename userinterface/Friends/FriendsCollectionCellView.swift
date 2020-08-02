@@ -12,7 +12,7 @@ class FriendsCollectionCellView: UICollectionViewCell {
     
     @IBOutlet weak var avatarFiend: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-   
+    
     let pageLike = PageLike()
     
     override func awakeFromNib() {
@@ -30,6 +30,8 @@ class FriendsCollectionCellView: UICollectionViewCell {
         ]
         
         NSLayoutConstraint.activate(pageLikeConstraints)
+        
+        
     }
     
   

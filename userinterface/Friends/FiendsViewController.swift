@@ -139,7 +139,7 @@ class FriendsTableViewController: UITableViewController {
         let transfer: FriendsCollectionViewController = segue.destination as! FriendsCollectionViewController
         
         transfer.user = section[sectionTitles[indexPath!.section]]![indexPath!.row]
-      
+        
     }
 }
 
