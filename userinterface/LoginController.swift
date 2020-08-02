@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginController.swift
 //  userinterface
 //
 //  Created by Дарья Шимко on 01.07.2020.
@@ -8,12 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
+    @IBOutlet weak var firstPoint: UILabel!
+    @IBOutlet weak var secondPoint: UILabel!
+    @IBOutlet weak var thirdPoint: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
@@ -29,8 +32,37 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.firstPoint.alpha   = 0.1
+        self.secondPoint.alpha  = 0.1
+        self.thirdPoint.alpha   = 0.1
+        
+        
+        UIView.animate(withDuration: 1, delay: 0.0, options: .repeat, animations: {
+            self.firstPoint.alpha   = 1
+            self.secondPoint.alpha  = 0.1
+            self.thirdPoint.alpha   = 0.1
+
+        }, completion: { (result) in })
+
+        UIView.animate(withDuration: 1, delay: 0.4, options: .repeat, animations: {
+
+            self.firstPoint.alpha   = 0.1
+            self.secondPoint.alpha  = 1
+            self.thirdPoint.alpha   = 0.1
+
+        }, completion: { (result) in })
+
+        UIView.animate(withDuration: 1, delay: 0.6, options: .repeat, animations: {
+
+            self.firstPoint.alpha   = 0.1
+            self.secondPoint.alpha  = 0.1
+            self.thirdPoint.alpha   = 1
+
+        }, completion: { (result) in })
+
     }
+    
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -68,8 +100,33 @@ class ViewController: UIViewController {
     
     @IBAction func singIn(_sender: UIButton) {
         
+        if loginText.text! == "admin" && passwordText.text! == "12345" {
+            
+            guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "tabBar") as? UITabBarController else { return }
+
+            vc.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            present(vc, animated: true, completion: nil)
+
+            return
+
+        } else {
+    
+            showAlertLogin("Error", message: "Your login or password is not correct")
+            
+            
+        }
         
     }
     
+    func showAlertLogin(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil)
+        
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }
 
