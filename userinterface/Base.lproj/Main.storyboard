@@ -186,7 +186,7 @@
         <!--Friends-->
         <scene sceneID="9eZ-DA-4iL">
             <objects>
-                <navigationController id="RVh-24-cEG" sceneMemberID="viewController">
+                <navigationController id="RVh-24-cEG" customClass="CusomNavigationController" customModule="userinterface" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="person" catalog="system" id="bPC-GA-d96"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8H2-Be-dm4">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
