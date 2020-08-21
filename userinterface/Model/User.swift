@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class User {
     
@@ -19,6 +20,38 @@ class User {
         
         self.name = name
         self.avaterImage = avaterImage
+    }
+}
+
+
+
+
+// MARK: - Item
+struct UserJSON: Codable {
+    
+    let id: Int
+    let firstName, lastName: String
+    var isClosed, canAccessClosed: Bool?
+    let nickname: String?
+    let photo200: String
+    let online: Int
+    let trackCode: String
+    let deactivated: String?
+
+    
+    init(from json: JSON) {
+    
+        self.id                 = json["id"].int!
+        self.firstName          = json["first_name"].stringValue
+        self.lastName           = json["last_name"].stringValue
+        self.isClosed           = json["is_closed"].boolValue
+        self.canAccessClosed    = json["can_access_closed"].boolValue
+        self.nickname           = json["nickname"].stringValue
+        self.photo200           = json["photo_200"].stringValue
+        self.online             = json["online"].int!
+        self.trackCode          = json["track_code"].stringValue
+        self.deactivated        = json["deactivated"].stringValue
+        
     }
     
 }
