@@ -144,25 +144,25 @@
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jhH-Fq-bNY">
                                             <rect key="frame" x="10" y="41" width="195" height="104"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="104" id="ZSh-Jh-wt1"/>
+                                            </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZp-9Q-Gr4" customClass="PageLike" customModule="userinterface" customModuleProvider="target">
                                             <rect key="frame" x="84.5" y="155" width="46" height="24"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="46" id="IZX-cm-R4u"/>
-                                            </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Vyo-K7-Wof" firstAttribute="centerX" secondItem="G23-uF-rTY" secondAttribute="centerX" id="7l1-eH-xrf"/>
-                                        <constraint firstItem="Vyo-K7-Wof" firstAttribute="top" secondItem="G23-uF-rTY" secondAttribute="top" constant="10" id="AiX-EN-3dC"/>
-                                        <constraint firstItem="jhH-Fq-bNY" firstAttribute="top" secondItem="Vyo-K7-Wof" secondAttribute="bottom" constant="10" id="LzX-6o-fAD"/>
-                                        <constraint firstItem="jhH-Fq-bNY" firstAttribute="leading" secondItem="G23-uF-rTY" secondAttribute="leading" constant="10" id="d2X-Oc-lZg"/>
-                                        <constraint firstAttribute="trailing" secondItem="jhH-Fq-bNY" secondAttribute="trailing" constant="10" id="hpe-Nw-qwe"/>
-                                        <constraint firstAttribute="bottom" secondItem="jhH-Fq-bNY" secondAttribute="bottom" constant="50" id="jgD-yL-ocE"/>
-                                        <constraint firstItem="UZp-9Q-Gr4" firstAttribute="top" secondItem="jhH-Fq-bNY" secondAttribute="bottom" constant="10" id="vCo-vp-TUf"/>
-                                        <constraint firstItem="UZp-9Q-Gr4" firstAttribute="centerX" secondItem="G23-uF-rTY" secondAttribute="centerX" id="xjh-hF-2tz"/>
-                                        <constraint firstAttribute="bottom" secondItem="UZp-9Q-Gr4" secondAttribute="bottom" constant="16" id="yZ7-Y7-QM0"/>
+                                        <constraint firstItem="UZp-9Q-Gr4" firstAttribute="leading" secondItem="G23-uF-rTY" secondAttribute="leading" constant="84.5" id="2U6-sF-vlo"/>
+                                        <constraint firstItem="Vyo-K7-Wof" firstAttribute="top" secondItem="G23-uF-rTY" secondAttribute="top" constant="10" id="Y2w-b3-9XX"/>
+                                        <constraint firstItem="jhH-Fq-bNY" firstAttribute="centerX" secondItem="UZp-9Q-Gr4" secondAttribute="centerX" id="ZT9-bE-0VD"/>
+                                        <constraint firstItem="jhH-Fq-bNY" firstAttribute="leading" secondItem="G23-uF-rTY" secondAttribute="leading" constant="10" id="bU2-SL-1ax"/>
+                                        <constraint firstItem="UZp-9Q-Gr4" firstAttribute="top" secondItem="jhH-Fq-bNY" secondAttribute="bottom" constant="10" id="dcG-yC-um2"/>
+                                        <constraint firstItem="Vyo-K7-Wof" firstAttribute="centerX" secondItem="G23-uF-rTY" secondAttribute="centerX" id="epN-Ea-RaL"/>
+                                        <constraint firstItem="Vyo-K7-Wof" firstAttribute="centerX" secondItem="jhH-Fq-bNY" secondAttribute="centerX" id="tWY-E9-1Zs"/>
+                                        <constraint firstAttribute="bottom" secondItem="UZp-9Q-Gr4" secondAttribute="bottom" constant="16" id="xbC-TK-hFM"/>
+                                        <constraint firstItem="jhH-Fq-bNY" firstAttribute="top" secondItem="Vyo-K7-Wof" secondAttribute="bottom" constant="10" id="ztg-g3-i5A"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="215" height="195"/>
@@ -688,6 +688,7 @@
         <!--Login Controller-->
         <scene sceneID="LyG-CQ-b92">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F92-Ic-2iX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="Ve2-45-2iD" customClass="VKLoginController" customModule="userinterface" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kfd-sR-kph">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -712,10 +713,9 @@
                         <viewLayoutGuide key="safeArea" id="AMq-x5-zTk"/>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="qb2-1y-5VL" id="h09-qk-w78"/>
+                        <outlet property="webView" destination="qb2-1y-5VL" id="yGf-dj-yjG"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F92-Ic-2iX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2291" y="-2061"/>
         </scene>
